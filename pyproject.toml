@@ -1,0 +1,46 @@
+# Yet another one 10,000 foot view @ https://github.com/squillero/10k
+# Copyright © 2022 Giovanni Squillero <squillero@polito.it>
+# Free for personal or classroom use; see 'LICENSE.md' for details.
+
+[tool.yapf]
+based_on_style = "google"
+blank_line_before_module_docstring = true
+column_limit = 120
+
+[tool.yapfignore]
+ignore_patterns = [
+  ".*/**",
+]
+
+[tool.black]
+include = "\\.ipynb"
+line-length = 120
+
+[tool.poetry]
+authors = ["Giovanni Squillero <squillero@polito.it>"]
+description = "Common environment for Squillero's 10k foot views"
+license = "proprietary"
+name = "10k"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+black = {extras = ["jupyter"], version = ">=22.6"}
+jupyter = ">=1.0.0"
+numpy = ">=1.23"
+pandas = ">=1.4"
+python = "~3.10"
+seaborn = "^0.11.2"
+sympy = "^1.10.1"
+toml = ">=0.10"
+tqdm = ">=4.64"
+yapf = ">=0.32"
+
+[tool.poetry.dev-dependencies]
+
+#[[tool.poetry.source]]
+#name = "CUDA_v11.6"
+#url = "https://download.pytorch.org/whl/cu116/"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
